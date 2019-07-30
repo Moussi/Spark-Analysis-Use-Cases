@@ -1,7 +1,6 @@
-package com.moussi.dataframes
+package com.moussi.record.linkage.dataframes
 
-import org.apache.spark.sql.functions._
-import org.apache.spark.sql.{DataFrame, SparkSession}
+import org.apache.spark.sql.SparkSession
 
 object RecordLinkageModeling {
     def main(args: Array[String]): Unit = {

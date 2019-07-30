@@ -1,4 +1,4 @@
-package com.moussi.dataframes
+package com.moussi.record.linkage.dataframes
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.sql.functions._
@@ -60,7 +60,7 @@ object SparkPivotingAndReshaping {
 
     private def pivotDescSummary(summary: DataFrame) = {
         import summary.sparkSession.implicits._
-        import com.moussi.utils.StringSafeConverter._
+        import com.moussi.record.linkage.utils.StringSafeConverter._
 
         val schema = summary.schema
         val longForm = summary.flatMap(

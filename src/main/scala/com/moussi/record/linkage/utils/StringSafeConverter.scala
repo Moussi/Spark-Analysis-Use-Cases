@@ -1,4 +1,4 @@
-package com.moussi.utils
+package com.moussi.record.linkage.utils
 
 import scala.util.{Success, Try}
 

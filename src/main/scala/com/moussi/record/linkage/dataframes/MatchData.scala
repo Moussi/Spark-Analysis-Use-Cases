@@ -1,4 +1,4 @@
-package com.moussi.dataframes
+package com.moussi.record.linkage.dataframes
 
 case class MatchData(
     id_1: Option[Int],
