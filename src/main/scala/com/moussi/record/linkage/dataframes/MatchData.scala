@@ -13,14 +13,16 @@ case class MatchData(
     cmp_by: Option[Int],
     cmp_plz: Option[Int],
     is_match: Boolean
-)
+) {
+    def scoreMatchData() = {
+        (Score(this.cmp_lname_c1.getOrElse(0.0)) + this.cmp_plz + this.cmp_by + this.cmp_bd + this.cmp_bm).value
+    }
 
-case class Score(value: Double){
+}
+
+case class Score(value: Double) {
     def +(oi: Option[Int]) = {
         Score(value + oi.getOrElse(0))
     }
 
-    def scoreMatchData(md: MatchData) = {
-        (Score(md.cmp_lname_c1.getOrElse(0.0)) + md.cmp_plz + md.cmp_by + md.cmp_bd + md.cmp_bm).value
-    }
 }

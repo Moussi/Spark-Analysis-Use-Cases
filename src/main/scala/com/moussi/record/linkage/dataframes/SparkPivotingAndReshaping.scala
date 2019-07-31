@@ -49,6 +49,9 @@ object SparkPivotingAndReshaping {
 
     private def CalculateMeanCountDiffApiBased(matchSummaryWideLongForm: DataFrame,
         missSummaryWideLongForm: DataFrame) = {
+
+        import matchSummaryWideLongForm.sparkSession.implicits._
+
         matchSummaryWideLongForm.join(missSummaryWideLongForm, "field")
             .where(matchSummaryWideLongForm("field") =!= "id_2" and matchSummaryWideLongForm("field") =!= "id_1")
             .select(
